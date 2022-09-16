@@ -21,6 +21,7 @@ export default function Quiz() {
 
         setData(r);
         setDone("dn");
+        console.log(data)
       });
     }
   });
@@ -41,6 +42,7 @@ export default function Quiz() {
         {data.length > 0
           ? data.map((v) => {
               i += 1;
+              console.log("Damn  " + JSON.stringify(v))
               return (
                 <Question
                   value={v}
@@ -60,7 +62,7 @@ export default function Quiz() {
                 />
               );
             })
-          : ""}
+          : "Not Available"}
       </Container>
       <div className="toolbar">
       <IoCreateOutline className="widget cursor-pointer" title="create quiz with random questions"/>

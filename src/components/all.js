@@ -3,22 +3,10 @@ import Toolbar from "./sorting/toolbar";
 import Popover from "./message/popup";
 import axios from "axios";
 function getDataAsString(url) {
-  let done = false;
-  if (done === false) {
-    const res = axios.get("https://server-python-py.herokuapp.com/" + url);
+    const res = fetch("https://server-python-py.herokuapp.com/" + url);
 
-    return new Promise((r) => {
-      res.then((rj) => {
-        r({
-          text: function () {
-            return new Promise((rjj) => {
-              rjj(JSON.stringify(rj.data));
-            });
-          },
-        });
-      });
-    });
-  }
+    return res
+
 }
 function remove(array, index) {
   const __index__ = index;

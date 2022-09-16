@@ -6,7 +6,7 @@ import Option from "../questions/option";
 function Toolbar({ onSubmit, addons }) {
   const [options, option] = useState(["nw"]);
   const [disable, setRule] = useState(true)
-  var answer = "NA";
+  const [answer, set] = useState("NA");
   let i = -1
   function addOption() {
     option([...options, "nw"]);
@@ -56,7 +56,7 @@ function Toolbar({ onSubmit, addons }) {
             return (
               <Option
                 onMarkAnswer={(v) => {
-                  answer = v;
+                  set(v)
                 }}
                 index={i}
               />

@@ -9,7 +9,7 @@ export default function Option({onMarkAnswer=() => {}, onUnmarkAnswer =()=>{}, i
         <div className={isAnswer ? "trn-all alert alert-success" : "trn-all alert alert-dark"}>
           <input value={value} id={`value-${index}`} onChange={(e) => {
             set(e.target.value)
-            onMarkAnswer(value)
+            onMarkAnswer(document.getElementById("value-" + index).value)
 
           }} data-amians={String(isAnswer)}/>
           <input type={"checkbox"} className="cwtitle form-check-input" title="mark as answer" onClick={() => {
