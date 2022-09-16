@@ -51,7 +51,7 @@
   },
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html",
+    "build": "parcel src/index.html --open",
     "build:css": "tailwind build -i build.css -o src/tailwind.css"
   }
 }
