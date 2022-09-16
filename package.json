@@ -2,7 +2,7 @@
   "name": "tron-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": " App.js",
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -51,6 +51,7 @@
   },
   "scripts": {
     "dev": "parcel src/index.html",
+    "build": "parcel src/index.html --open",
     "build:css": "tailwind build -i build.css -o src/tailwind.css"
   }
 }
