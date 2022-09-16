@@ -1,10 +1,10 @@
-import { useState } from "react"; 
+import { useState } from "react";
 
 export default function Question({
   value,
   onSelect = () => {},
   onUnSelect = () => {},
-  index
+  index,
 }) {
   const [isChecked, set] = useState(false);
   return (

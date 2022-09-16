@@ -1,102 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 
 * {
-    font-family: Arial;
+  font-family: Arial;
 }
 
 .main-heading {
-    font-family: 'Fredoka One';
-    text-align: center;
-    padding: 10;
+  font-family: "Fredoka One";
+  text-align: center;
+  padding: 10;
 }
 
 .toolbar {
-    background-color: gray;
-    padding: 10;
+  background-color: gray;
+  padding: 10;
 }
 
 .questions {
-    padding: 30;
-    margin: 30;
-    border: 1px solid black;
-    overflow: auto;
-    height: 50%;
-    /* resize: vertical; */
+  padding: 30;
+  margin: 30;
+  border: 1px solid black;
+  overflow: auto;
+  height: 50%;
+  /* resize: vertical; */
 }
 
 .addq {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 input {
-    outline: none;
-    border: none;
-    border-bottom: 1px solid black;
-    background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: transparent;
 }
 
 span {
-    outline: none;
-    cursor: pointer;
+  outline: none;
+  cursor: pointer;
 }
 
 .cursor-pointer {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.widget { 
-    margin-left: 10px;
+.widget {
+  margin-left: 10px;
 }
 
 .big {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 .bin {
-    color: red;
+  color: red;
 }
 .bin:hover {
-    animation-name: Scolor;
-    animation-duration: 2s;
+  animation-name: Scolor;
+  animation-duration: 2s;
 }
 
 @keyframes Scolor {
-    50% {color: red}
-    50% {color: rgb(168, 2, 2);}
+  50% {
+    color: red;
+  }
+  50% {
+    color: rgb(168, 2, 2);
+  }
 }
 
 .selected {
-    outline: 1px inset blue;
+  outline: 1px inset blue;
 }
 
 .cwtitle {
-    position: absolute;
-    right: 10px;
+  position: absolute;
+  right: 10px;
 }
 
 .margin-30 {
-    
-    margin: 30;
+  margin: 30;
 }
 .margin-20 {
-    
-    margin: 20;
+  margin: 20;
 }
 
 .disable-text-selection {
-    user-select: none;
+  user-select: none;
 }
 
 .trn-all {
-    transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .rmb-l {
-    border-bottom-left-radius: 0px !important;
-    border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-top-left-radius: 0px !important;
 }
 
 .rmb-r {
-    border-bottom-right-radius: 0px !important;
-    border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border-top-right-radius: 0px !important;
 }

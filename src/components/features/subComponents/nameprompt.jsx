@@ -3,14 +3,16 @@ import Input from "./input";
 
 export default function Prompt(props) {
   const [isSubmited, set] = useState(false);
-  const [disabled, setDisablity] = useState(false)
-  const [value, setValue] = useState() 
+  const [disabled, setDisablity] = useState(false);
+  const [value, setValue] = useState();
   return (
     <>
       {isSubmited ? (
         <>
-        <b className="margin-30">Name: <span id="name">{value}</span></b>
-        {props.children}
+          <b className="margin-30">
+            Name: <span id="name">{value}</span>
+          </b>
+          {props.children}
         </>
       ) : (
         <div
@@ -22,12 +24,12 @@ export default function Prompt(props) {
             className={"is-invalid"}
             focus={true}
             onChange={(value) => {
-                setValue(document.getElementById("name-input").value.trim())
-                if (document.getElementById("name-input").value.trim()) {
-                    setDisablity(false)
-                  } else {
-                    setDisablity(true)
-                  }
+              setValue(document.getElementById("name-input").value.trim());
+              if (document.getElementById("name-input").value.trim()) {
+                setDisablity(false);
+              } else {
+                setDisablity(true);
+              }
             }}
           />
           <br />
@@ -36,8 +38,8 @@ export default function Prompt(props) {
             className="btn btn-primary"
             disabled={disabled}
             onClick={() => {
-              setValue(document.getElementById("name-input").value.trim())
-              set(true)
+              setValue(document.getElementById("name-input").value.trim());
+              set(true);
             }}
           >
             Start Quiz

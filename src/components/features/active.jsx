@@ -6,7 +6,8 @@ import QuizClient from "./quiz-client";
 import Offcanvas from "../sorting/offcanvas";
 import { AiFillEye } from "react-icons/ai";
 import { RiDeleteBin2Line } from "react-icons/ri";
-import { downloadCSVFromArray } from 'file-exporter';export default function ActiveQuizes({ allowDel = true, allowPrev = true }) {
+import { downloadCSVFromArray } from "file-exporter";
+export default function ActiveQuizes({ allowDel = true, allowPrev = true }) {
   const [data, set] = useState([]);
   const [done, setDone] = useState("nd");
   const [cData, setData] = useState("Select a quiz to veiw its content");
@@ -99,20 +100,28 @@ import { downloadCSVFromArray } from 'file-exporter';export default function Act
             visit{" "}
           </button>
         </Link>
-        <button className="rmb-l btn btn-primary" onClick={() => {
-          all.getDataAsString(`export?qn=${cName}`).then(r => {
-            r.text().then(r => {
-              const data = JSON.parse(r)
-              const output = []
-              for (let i=0; i<data.length; i++) {
-                const element = data[i]
-                output.push({"Student name": element["name"], "Student's score": element["marks"]})
-              }
-              downloadCSVFromArray(output, `${cName}-attempts`)
-            })
-          })
-        }}>Export data as .csv (All)</button>
-        
+        <button
+          className="rmb-l btn btn-primary"
+          onClick={() => {
+            all.getDataAsString(`export?qn=${cName}`).then((r) => {
+              r.text().then((r) => {
+                const data = JSON.parse(r);
+                const output = [];
+                for (let i = 0; i < data.length; i++) {
+                  const element = data[i];
+                  output.push({
+                    "Student name": element["name"],
+                    "Student's score": element["marks"],
+                  });
+                }
+                downloadCSVFromArray(output, `${cName}-attempts`);
+              });
+            });
+          }}
+        >
+          Export data as .csv (All)
+        </button>
+
         <RiDeleteBin2Line
           hidden={!allowDel}
           className="cursor-pointer bin widget"
@@ -120,7 +129,7 @@ import { downloadCSVFromArray } from 'file-exporter';export default function Act
           title={"delete quiz"}
           onClick={() => {
             all.getDataAsString(`delQuiz?qn=${cName}`).then((r) => {
-              window.location.reload()
+              window.location.reload();
             });
           }}
         />

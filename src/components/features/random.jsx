@@ -8,7 +8,7 @@ import Question from "../questions/questions";
 import { CToolbar } from "../sorting/toolbar";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { Link } from "react-router-dom";
-import {IoCreateOutline} from "react-icons/io5"
+import { IoCreateOutline } from "react-icons/io5";
 
 export default function Random() {
   const [RandomQuestion, set] = useState([]);
@@ -35,9 +35,7 @@ export default function Random() {
           className={"widget cursor-pointer"}
           onClick={() => {
             setDn("nd");
-            All.getDataAsString(
-              `randomq?lm=${limit}`
-            ).then((r) => {
+            All.getDataAsString(`randomq?lm=${limit}`).then((r) => {
               r.text().then((txt) => {
                 if (done === "nd") {
                   set(JSON.parse(txt));
@@ -46,7 +44,6 @@ export default function Random() {
               });
             });
           }}
-          
         />
         <MdOutlineProductionQuantityLimits
           className={"widget cursor-pointer"}
@@ -65,14 +62,20 @@ export default function Random() {
                   setLimit(document.getElementById("limit").value)
                 }
               />
-              <hr/>
+              <hr />
               <small>Initial limit: {limit}</small>
             </>
           }
           show={{ value: show, set: setVisibility }}
         />
       </CToolbar>
-      <Link to={"/"} style={{"color": "black", "textDecoration": "none"}} className="margin-30">Back</Link>
+      <Link
+        to={"/"}
+        style={{ color: "black", textDecoration: "none" }}
+        className="margin-30"
+      >
+        Back
+      </Link>
     </>
   );
 }

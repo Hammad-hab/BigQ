@@ -18,15 +18,14 @@ import Quiz from "./components/features/quiz";
 import { GrNewWindow } from "react-icons/gr";
 import { MdViewList } from "react-icons/md";
 import ActiveQuizes from "./components/features/active";
-import Password from "./components/authentication/password"
-import Client from "./components/features/Client"
+import Password from "./components/authentication/password";
+import Client from "./components/features/Client";
 
 export function App() {
-
   const [done, setDone] = useState("nd");
   const [questions, set] = useState([]);
   const [error, setError] = useState(false);
-  
+
   function loadQuestions() {
     All.getDataAsString("json")
       .then((res) => {
@@ -53,15 +52,30 @@ export function App() {
   /* Loading questions */
   loadQuestions();
   return (
-
     <>
-   
       <BrowserRouter>
         <Routes>
-          <Route path="/active" element={<Password><ActiveQuizes /></Password>} />
-          <Route path="/veiw" element={<ActiveQuizes allowDel={false} allowPrev={false}/>}/>
-          <Route path="/quiz" element={<Password><Quiz /></Password>} />
-          <Route path="/takequiz/:quizdata" element={<Client/>} />
+          <Route
+            path="/active"
+            element={
+              <Password>
+                <ActiveQuizes />
+              </Password>
+            }
+          />
+          <Route
+            path="/veiw"
+            element={<ActiveQuizes allowDel={false} allowPrev={false} />}
+          />
+          <Route
+            path="/quiz"
+            element={
+              <Password>
+                <Quiz />
+              </Password>
+            }
+          />
+          <Route path="/takequiz/:quizdata" element={<Client />} />
           <Route
             path="/"
             element={
@@ -89,9 +103,7 @@ export function App() {
                         title={"Remove all"}
                         className={"widget cursor-pointer"}
                         onClick={() => {
-                          All.getDataAsString(
-                            `removeall`
-                          ).then((r) => {
+                          All.getDataAsString(`removeall`).then((r) => {
                             document.getElementById("holder").innerHTML =
                               "<p>Removed all questions<p>";
                             loadQuestions();
@@ -104,7 +116,7 @@ export function App() {
                           title="Create Quiz"
                         />
                       </Link>
-                      
+
                       <Link to={"/active"}>
                         <MdViewList
                           className="widget cursor-pointer"

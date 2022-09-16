@@ -2,12 +2,14 @@ import { useState } from "react";
 
 import { Link } from "react-router-dom";
 import Heading from "../message/heading";
+
 export default function Password(props) {
   const [iscorrect, set] = useState(
     sessionStorage.getItem("signedin")
       ? Boolean(sessionStorage.getItem("signedin"))
       : false
   );
+
   return (
     <>
       {iscorrect ? (
@@ -38,7 +40,6 @@ export default function Password(props) {
           <Link to={"/veiw"} style={{ color: "black" }} className={"margin-30"}>
             I am here to take a quiz
           </Link>
-          
         </>
       )}
     </>

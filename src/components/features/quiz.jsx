@@ -4,7 +4,7 @@ import Question from "./subComponents/question";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import Input from "./subComponents/input";
-import {IoCreateOutline} from "react-icons/io5"
+import { IoCreateOutline } from "react-icons/io5";
 
 export default function Quiz() {
   const [data, setData] = useState([]);
@@ -12,7 +12,7 @@ export default function Quiz() {
   const [done, setDone] = useState("nd");
   const [Status, set] = useState();
   const nav = useNavigate();
-  const MP = 1
+  const MP = 1;
   var i = -1;
   All.getDataAsString("all").then((r) => {
     if (done === "nd") {
@@ -21,7 +21,7 @@ export default function Quiz() {
 
         setData(r);
         setDone("dn");
-        console.log(data)
+        console.log(data);
       });
     }
   });
@@ -30,10 +30,8 @@ export default function Quiz() {
     <>
       <span className={"margin-20"}>
         Name:
-        <Input ivalue="Some name" id={"$input"}/>,
-
-        Marks per question:
-        <Input ivalue="1" type={"number"} id={"$mp"}/>
+        <Input ivalue="Some name" id={"$input"} />, Marks per question:
+        <Input ivalue="1" type={"number"} id={"$mp"} />
       </span>
 
       <Container>
@@ -42,7 +40,7 @@ export default function Quiz() {
         {data.length > 0
           ? data.map((v) => {
               i += 1;
-              console.log("Damn  " + JSON.stringify(v))
+              console.log("Damn  " + JSON.stringify(v));
               return (
                 <Question
                   value={v}
@@ -65,7 +63,10 @@ export default function Quiz() {
           : "Not Available"}
       </Container>
       <div className="toolbar">
-      <IoCreateOutline className="widget cursor-pointer" title="create quiz with random questions"/>
+        <IoCreateOutline
+          className="widget cursor-pointer"
+          title="create quiz with random questions"
+        />
       </div>
       <button
         className="btn btn-primary margin-30"
@@ -74,7 +75,9 @@ export default function Quiz() {
           All.getDataAsString(
             `cquiz?n=${
               document.getElementById("$input").value
-            }&qs=${JSON.stringify(elements)}&mp=${document.getElementById("$mp").value}`
+            }&qs=${JSON.stringify(elements)}&mp=${
+              document.getElementById("$mp").value
+            }`
           )
             .catch()
             .then((r) => {
@@ -103,7 +106,6 @@ export default function Quiz() {
       ) : (
         <small>Waiting...</small>
       )}
-      
     </>
   );
 }

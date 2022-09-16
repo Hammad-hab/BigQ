@@ -1,5 +1,5 @@
 import { createContext } from "vm";
 
-const API = createContext()
+const API = createContext();
 
-export default API
+export default API;

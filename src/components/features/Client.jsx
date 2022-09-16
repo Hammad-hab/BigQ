@@ -13,7 +13,7 @@ export default function Client() {
       if (done === "nd") {
         setData(JSON.parse(JSON.parse(string)["questions"]));
         setMP(JSON.parse(string)["mp"]);
-        setDone("dn")
+        setDone("dn");
       }
     });
   });
