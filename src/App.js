@@ -81,7 +81,7 @@ export function App() {
             element={
               <Password>
                 {" "}
-                <small>v1.0.0</small>
+                <small>v1.0.1</small>
                 <Heading text={"BigQ"} />
                 <All.Toolbar
                   onSubmit={() => {
