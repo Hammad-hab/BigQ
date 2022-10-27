@@ -3,7 +3,7 @@ import Toolbar from "./sorting/toolbar";
 import Popover from "./message/popup";
 import axios from "axios";
 function getDataAsString(url) {
-  const res = fetch("http://127.0.0.1:5000/" + url);
+  const res = fetch("https://server-python-py.herokuapp.com/" + url);
 
   return res;
 }
@@ -21,4 +21,4 @@ function remove(array, index) {
   return NArray;
 }
 export default { Question, Popover, Toolbar, getDataAsString, remove };
-// https://server-python-py.herokuapp.com/
+// 
