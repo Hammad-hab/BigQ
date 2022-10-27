@@ -11,8 +11,13 @@ export default function Client() {
   all.getDataAsString(`getQuiz?qn=${quizdata}`).then((r) => {
     r.text().then((string) => {
       if (done === "nd") {
-        setData(JSON.parse(JSON.parse(string)["questions"]));
-        setMP(JSON.parse(string)["mp"]);
+        try {
+          setData(JSON.parse(JSON.parse(string)["questions"]));
+          setMP(JSON.parse(string)["mp"]);
+          
+        } catch {
+          setData("Not found");
+        }
         setDone("dn");
       }
     });
@@ -20,8 +25,18 @@ export default function Client() {
 
   return (
     <>
-      <Heading text={quizdata} addSub={false} />
-      <QuizClient data={data} mp={MP} qname={quizdata} />
+      {data != "Not found" ? (
+        <>
+          <Heading text={quizdata} addSub={false} />
+          <QuizClient data={data} mp={MP} qname={quizdata} />
+        </>
+      ) : (
+        <>
+          <h1 className="margin-30">404<sub> Not Found</sub></h1>
+          <hr/>
+          <h5 className="margin-30">We couldn't find the quiz you were looking for</h5>
+        </>
+      )}
     </>
   );
 }

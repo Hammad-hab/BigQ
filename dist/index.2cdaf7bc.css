@@ -105,6 +105,26 @@ span {
   border-bottom-right-radius: 0 !important;
 }
 
+.marks {
+  animation-name: c-change;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes c-change {
+  50% {
+    color: "red";
+  }
+
+  50% {
+    color: "blue";
+  }
+
+  50% {
+    color: "green";
+  }
+}
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -12161,6 +12181,16 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+
+.options-true {
+  opacity: .5;
+  filter: sepia();
+  user-select: none;
+}
+
+.trans {
+  transition: all .4s;
 }
 
 /*# sourceMappingURL=index.2cdaf7bc.css.map */

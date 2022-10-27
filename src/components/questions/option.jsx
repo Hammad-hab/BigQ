@@ -3,10 +3,15 @@ import { useState } from "react";
 export default function Option({
   onMarkAnswer = () => {},
   onUnmarkAnswer = () => {},
+  unmark = false,
   index = 0,
 }) {
   const [isAnswer, markAnswer] = useState(false);
   const [value, set] = useState("Option");
+  if (unmark === true) {
+    markAnswer(false)
+    set("Option")
+  }
   return (
     <div id="option">
       <small>

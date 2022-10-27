@@ -1,0 +1,12 @@
+
+.options-true {
+    opacity: 0.5;
+    filter: sepia();
+    user-select: none;
+}
+
+.trans {
+    transition: all 0.4s;
+ }
+  
+

@@ -7,6 +7,7 @@ function Toolbar({ onSubmit, addons }) {
   const [options, option] = useState(["nw"]);
   const [disable, setRule] = useState(true);
   const [answer, set] = useState("NA");
+  // const [uMark, umark]= useState(false)
   let i = -1;
   function addOption() {
     option([...options, "nw"]);
@@ -66,6 +67,7 @@ function Toolbar({ onSubmit, addons }) {
                   }}
                   index={i}
                 />
+                
               );
             })}
           </div>

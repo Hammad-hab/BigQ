@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import Input from "./subComponents/input";
 import { IoCreateOutline } from "react-icons/io5";
-
+import Random from "./subComponents/Randomize";
 export default function Quiz() {
   const [data, setData] = useState([]);
   const [elements, element] = useState([]);
@@ -76,7 +76,7 @@ export default function Quiz() {
             `cquiz?n=${
               document.getElementById("$input").value
             }&qs=${JSON.stringify(elements)}&mp=${
-              document.getElementById("$mp").value
+              rdocument.getElementById("$mp").value
             }`
           )
             .catch()
@@ -98,7 +98,7 @@ export default function Quiz() {
             Failed to create the quiz please try again.
           </div>
         ) : (
-          <div className="alert alert-success">
+          <div className={`alert alert-success`}>
             Successfully created a quiz. Redirecting in 2s{" "}
             {void setTimeout(() => nav("/"), 2000)}
           </div>
@@ -106,6 +106,8 @@ export default function Quiz() {
       ) : (
         <small>Waiting...</small>
       )}
+      <br/>
+      <Random set={set} elements={elements}/>
     </>
   );
 }

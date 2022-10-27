@@ -102,3 +102,16 @@ span {
   border-bottom-right-radius: 0px !important;
   border-top-right-radius: 0px !important;
 }
+
+.marks {
+  animation-name: c-change;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  /* color: "white"; */
+}
+
+@keyframes c-change {
+  50% {color: "red";}
+  50% {color: "blue";}
+  50% {color: "green"}
+}

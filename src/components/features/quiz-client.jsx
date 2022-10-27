@@ -3,6 +3,7 @@ import { useState } from "react";
 import AttemptableQuestion from "./subComponents/attemptable-question";
 import all from "../all";
 import Prompt from "./subComponents/nameprompt";
+import Card from "./subComponents/Card";
 export default function QuizClient({ data, isPrev = false, mp = 0, qname }) {
   const [answers, set] = useState([]);
   const [isSubmited, setVl] = useState(false);
@@ -19,7 +20,7 @@ export default function QuizClient({ data, isPrev = false, mp = 0, qname }) {
               const Data = JSON.parse(vl.opts);
               console.log("done");
               index += 1;
-
+              
               return (
                 <AttemptableQuestion
                   vl={vl}
@@ -30,7 +31,8 @@ export default function QuizClient({ data, isPrev = false, mp = 0, qname }) {
               );
             })
           ) : (
-            <b>No data to display</b>
+           
+            <p className="margin-30"><b>No Questions! Please contact the creator of this quiz.</b><br/></p>
           )
         ) : (
           <b>Select a quiz to veiw its content</b>
@@ -65,11 +67,11 @@ export default function QuizClient({ data, isPrev = false, mp = 0, qname }) {
           Submit
         </button>
       ) : (
-        <h1>Your Score</h1>
+        <Card h="Your Score: "/>
       )}
       <br />
       {isSubmited ? (
-        <h3 className="margin-30" style={{ color: "gray" }}>
+        <h3 className="margin-30 marks">
           {marks}
         </h3>
       ) : (
