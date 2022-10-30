@@ -28,7 +28,7 @@ export default function Password(props) {
               type={"password"}
               style={{ border: "3px inset" }}
               onChange={(e) => {
-                if (e.target.value === "biscuitstyle1234") {
+                if (e.target.value === "style@74") {
                   set(true);
                   sessionStorage.setItem("signedin", true);
                 } else {
