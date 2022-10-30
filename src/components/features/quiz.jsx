@@ -30,8 +30,9 @@ export default function Quiz() {
     <>
       <span className={"margin-20"}>
         Name:
-        <Input ivalue="Some name" id={"$input"} />, Marks per question:
-        <Input ivalue="1" type={"number"} id={"$mp"} />
+        <Input ivalue="Some name" className="margin-30" id={"$input"} />
+         Marks per question: 
+         <Input ivalue="1" className="margin-30" type={"number"} id={"$mp"} />
       </span>
 
       <Container>
@@ -76,7 +77,7 @@ export default function Quiz() {
             `cquiz?n=${
               document.getElementById("$input").value
             }&qs=${JSON.stringify(elements)}&mp=${
-              rdocument.getElementById("$mp").value
+              document.getElementById("$mp").value
             }`
           )
             .catch()

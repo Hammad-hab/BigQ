@@ -29,14 +29,15 @@ export default function Question({
         <b>Options:</b>
         <br />
         <ul>
-          {JSON.parse(value.opts).map((v) => {
+          { value.opts ?
+          JSON.parse(value.opts).map((v) => {
             return (
               <li>
                 <small>{v}</small>
                 <br />
               </li>
             );
-          })}
+          }): ""}
         </ul>
       </div>
     </>
