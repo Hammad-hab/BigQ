@@ -3,7 +3,7 @@ import Toolbar from "./sorting/toolbar";
 import Popover from "./message/popup";
 import axios from "axios";
 function getDataAsString(url) {
-  const res = fetch("https://server-python-py.herokuapp.com/" + url);
+  const res = fetch("http://hammadhab.pythonanywhere.com/" + url);
 
   return res;
 }
